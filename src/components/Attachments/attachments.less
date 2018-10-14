@@ -1,0 +1,72 @@
+.attachments-main {
+    margin-top: 40px;
+    display: block;
+    min-width: 800px;
+    .table-header {
+        color: #8493b2;
+        font-size: 14px;
+        padding-right: 0 !important;
+        vertical-align: middle;
+        line-height: 32px;
+        span {
+            margin-right: 50px;
+            line-height: 1
+        }
+        a {
+            margin-right: 10px;
+        }
+        label {
+            float: right;
+            margin-bottom: 0;
+            input {
+                cursor: pointer;
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #dddee1;
+                background-color: #fff;
+            }
+        }
+    }
+
+    .oaui-table-wrapper {
+        border: none;
+
+        .oaui-table::before, .oaui-table::after {
+            display: none;
+        }
+
+        tr {
+            th:nth-child(2) {
+                text-align: left;
+            }
+            td:nth-child(2) {
+                text-align: left;
+            }
+        }
+
+        th, td {
+            text-align: center;
+            border: none;
+        }
+        a {
+            cursor: pointer;
+        }
+
+        .operate-item {
+            margin: 0 5px;
+        }
+
+        thead {
+            th {
+                background-color: #f8f9fb;
+            }
+        }
+
+        .oaui-table-row-highlight, .oaui-table-row-hover  {
+            td {
+                background-color: transparent;
+            }
+        }
+    }
+}

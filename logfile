@@ -1,0 +1,28 @@
+LOG:  database system was shut down at 2018-10-14 18:44:12 CST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "James" does not exist
+FATAL:  role "root" does not exist
+ERROR:  type "string" does not exist at character 243
+STATEMENT:  CREATE TABLE IF NOT EXISTS "wiki_pages" (
+	    page_id      uuid         primary key,
+	    space_id     uuid         REFERENCES wiki_spaces(space_id),
+	    title        varchar(48),
+	    update_time  timestamp(0) with time zone,
+	    content      string
+	);
+ERROR:  cannot drop table wiki_spaces because other objects depend on it
+DETAIL:  constraint wiki_pages_space_id_fkey on table wiki_pages depends on table wiki_spaces
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  drop table wiki_spaces;
+ERROR:  role "postgres" does not exist
+STATEMENT:  alter user postgres with password 'foobar';
+ERROR:  syntax error at or near "fc" at character 39
+STATEMENT:  insert into wiki_spaces VALUES (489e73fc-ff20-4ba3-8057-b355d6cb52f7, "FE代码规范");
+ERROR:  column "489e73fc-ff20-4ba3-8057-b355d6cb52f7" does not exist at character 33
+STATEMENT:  insert into wiki_spaces VALUES ("489e73fc-ff20-4ba3-8057-b355d6cb52f7", "FE代码规范");
+ERROR:  column "FE代码规范" does not exist at character 73
+STATEMENT:  insert into wiki_spaces VALUES ('489e73fc-ff20-4ba3-8057-b355d6cb52f7', "FE代码规范");
+ERROR:  permission denied for relation wiki_spaces
+STATEMENT:  insert into wiki_spaces VALUES ('489e73fc-ff20-4ba3-8057-b355d6cb52f7', 'FE代码规范');

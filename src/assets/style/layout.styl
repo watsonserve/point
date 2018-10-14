@@ -1,0 +1,131 @@
+/**
+ * @file 全局样式表
+ * @author wangxingzhuo <wangxingzhuo@baidu.com>
+ *///
+
+@import '~vuetify/src/stylus/main'
+
+body
+  margin 0
+  padding 0
+  font 14px/20px Arial, sans-serif, 'Microsoft YaHei'
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  background #ebeef4
+
+*, *:before, *:after
+  -ms-box-sizing border-box
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
+
+.viewport
+  position absolute
+  left 0
+  top 0
+  right 0
+  bottom 0
+  overflow-x auto
+  overflow-y hidden
+
+.animated
+  -webkit-animation-duration 1s
+  animation-duration 1s
+  -webkit-animation-fill-mode both
+  animation-fill-mode both
+
+a, a:hover, a:active, a:focus, a:active:focus,
+.btn, .btn:hover, .btn:active, .btn:focus, .btn:active:focus,
+button, button:hover, button:active, button:focus, button:active:focus,
+input[type=submit], input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus, input[type=submit]:active:focus
+  text-decoration none
+  outline 0
+
+.btn, .btn:hover, .btn:active, .btn:focus, .btn:active:focus,
+button, button:hover, button:active, button:focus, button:active:focus,
+input[type=submit], input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus, input[type=submit]:active:focus
+  border 1px solid transparent
+  // padding 0
+  cursor pointer
+
+a, button
+  color #5b6d95
+
+a:hover, a.active
+  color #4786ff
+
+input:focus, input:active
+  outline 0
+
+h1, h2, h3, h4, h5, h6, p
+  margin 0
+
+em
+  font-style normal
+
+ul, ol
+  margin 0
+
+  &.list-unstyled
+    padding 0
+    list-style none
+
+  &.list-inline > li
+    display inline-block
+    vertical-align top
+
+.hide
+  display none !important
+
+.pull-left
+  float left
+
+.pull-right
+  float right
+
+.clearfix:after
+  clear both
+
+#app
+  position relative
+  padding 64px 0 0
+  min-width 1024px
+  width 100%
+  height 100%
+
+  main
+    position relative
+    height 100%
+    overflow auto
+
+    .random-bg-color-0
+      background-color #b6dbf6
+
+    .random-bg-color-1
+      background-color #9dd3e5
+
+    .random-bg-color-2
+      background-color #82d3d2
+
+    .random-bg-color-3
+      background-color #a2abd5
+
+    .random-bg-color-4
+      background-color #cdb6f8
+
+    .random-bg-color-5
+      background-color #e595b1
+
+    .random-bg-color-6
+      background-color #e6c998
+
+em.point
+  display block
+  width 50px
+  height 50px
+  margin 0 auto 10px
+  font-size 30px
+  line-height 50px
+  text-align center
+  color #fff
+  border-radius 100%

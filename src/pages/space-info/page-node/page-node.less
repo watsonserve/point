@@ -1,0 +1,82 @@
+.viewport #app .oaui-tree p.page-node {
+    position: relative;
+    border-radius: 30px;
+    padding: 0 4px 0 32px;
+    width: 100%;
+    height: 32px;
+
+    .expand {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 100%;
+        text-align: center;
+    }
+
+    span.page-title {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 32px;
+
+        a.text {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #404040;
+            vertical-align: middle;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.highlight {
+                color: #538eff;
+            }
+        }
+
+        input {
+            width: 100%;
+            outline: none;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    span.options {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 100%;
+        line-height: 32px;
+
+        a.icon {
+            display: inline-block;
+            vertical-align: middle;
+
+            i.icon-font {
+                color: #404040;
+            }
+        }
+    }
+
+    &:hover, &.node-hoverd {
+        background: #ebeef4;
+        padding-right: 64px;
+
+        span.options {
+            display: block;
+        }
+    }
+}

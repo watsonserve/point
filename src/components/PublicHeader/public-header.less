@@ -1,0 +1,176 @@
+@height: 64px;
+
+@keyframes rotateUp {
+    from {
+        transform: rotateX(0);
+    }
+
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes rotateDown {
+    from {
+        transform: rotateX(-180deg);
+    }
+
+    to {
+        transform: rotateX(0);
+    }
+}
+
+header.public-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 40px;
+    box-shadow: 0 1px 4px 0 rgba(14, 130, 220, .15);
+    width: 100%;
+    height: @height;
+    vertical-align: middle;
+    line-height: @height;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#4d5f94, endColorstr=#554d94);
+    background: linear-gradient(to right, #4d5f94, #554d94);
+
+    a {
+        color: #eee;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    a.logo {
+        display: inline-block;
+        margin-right: 30px;
+        width: 90px;
+        height: 100%;
+        vertical-align: middle;
+        line-height: @height;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+    .input-search {
+        width: 30%;
+        margin-right: 24px;
+    }
+
+    .input-search-middle {
+        display: inline-block;
+        width: 680px;
+        clear: both;
+    }
+
+    a.plaza, nav a.create, nav .message a, nav a.setting, nav a.fav {
+        display: inline-block;
+        font-size: 16px;
+        vertical-align: middle;
+        line-height: 20px;
+
+        & > i.icon-font {
+            vertical-align: top;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    nav {
+        float: right;
+
+        a.create, .message, a.setting {
+            margin-right: 20px;
+        }
+
+        .oaui-select-dropdown {
+            border-radius: 4px;
+            padding: 8px 0;
+            width: 136px;
+            box-shadow: 0 2px 9px rgba(43, 114, 168, .4);
+
+            li.oaui-dropdown-item {
+                padding: 0 12px;
+                text-align: left;
+
+                a {
+                    height: 28px;
+                    color: #495060;
+                    font-size: 14px !important;
+                    line-height: 28px;
+
+                    i, span {
+                        vertical-align: middle;
+                        font-size: 14px !important;
+                    }
+
+                    em {
+                        float: right;
+                        border-radius: 16px;
+                        padding: 0 4px;
+                        font-style: normal;
+                        color: #fff;
+                        line-height: 16px;
+                        background: #ff5661;
+                    }
+                }
+
+                &:hover {
+                    background: #4786ff;
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .user {
+            margin-left: 32px;
+
+            a {
+                display: inline-block;
+                position: relative;
+                width: 60px;
+                height: 40px;
+                vertical-align: middle;
+                line-height: 40px;
+
+                .avatar {
+                    display: inline-block;
+                    border: 2px solid #93a1c0;
+                    border-radius: 40px;
+                    width: 40px;
+                    height: 40px;
+                    overflow: hidden;
+                    vertical-align: middle;
+                    background: #fff url(../../assets/img/avatar.png) center no-repeat;
+                    background-size: 80%;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                i {
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    overflow: hidden;
+                    vertical-align: middle;
+                    animation-name: rotateDown;
+                    font-size: 12px;
+                }
+
+                &:hover i {
+                    animation-name: rotateUp;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+/**
+ * @file 首页右侧面板样式
+ * @author wangxingzhuo<wangxingzhuo@baidu.com>
+ */
+
+aside.rigit-panel
+  display block
+  position absolute
+  top 0
+  right 0
+  padding 20px 20px 0
+  box-shadow 1px 0 4px 0 rgba(14, 130, 220, .15)
+  min-width 280px
+  max-width 500px
+  width 20%
+  height 100%
+  background #f5f7fa
+  transform translate3d(100%, 0, 0)
+
+  a.fold
+    position absolute
+    top 26px
+    left -16px
+    border-radius 4px 0 0 4px
+    padding 1px 0 1px 4px
+    width 16px
+    height 20px
+    background #f8f9fb
+
+    &:before, &:after
+      content ''
+      display block
+      border-style solid solid solid none
+      border-color transparent #7d8baa transparent transparent
+      border-width 9px 9px 9px 0
+      width 0
+      height 0
+
+    &:after
+      margin -18px 0 0 1px
+      border-color transparent #f8f9fb transparent transparent
+
+  &.visible
+    transform translate3d(0, 0, 0)
+
+    a.fold
+      &:before, &:after
+        border-right none 0
+        border-left 9px solid #7d8baa
+
+      &:after
+        margin-right 0
+        margin-left -1px
+        border-color transparent transparent transparent #f8f9fb
+
+  .content
+    position relative
+    height 100%
+
+    h5.caption
+      padding 0 6px
+      width 100%
+      margin-bottom 12px
+      color #7d8baa
+      font-size 15px
+
+    ul.spaces
+      margin-bottom 10px
+
+      li.spaces__item
+        position relative
+        border-radius 4px
+        padding 8px 6px
+        overflow hidden
+
+        a.space-link
+          display block
+          margin-bottom 4px
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
+
+          em.space-point
+            display inline-block
+            margin-right 6px
+            border-radius 24px
+            width 24px
+            height 24px
+            text-align center
+            vertical-align middle
+            color #fff
+            line-height 24px
+
+          h5.space-name
+            display inline-block
+            color #333
+            font-size 15px
+            vertical-align middle
+
+        a.update-msg
+          display block
+          color #92a0bf
+          font-size 13px
+
+        a.care
+          display none
+          position absolute
+          top 0
+          right 0
+          margin 10px 4px
+          height 20px
+          color #4786ff
+          font-size 14px
+          line-height 20px
+
+          span
+            vertical-align middle
+
+        &:hover
+          background #e7ecf4
+
+          a.space-name h5, a.update-msg
+            color #4786ff
+
+          a.care
+            display block
+
+    & + .spaces
+      position relative
+      padding-top 40px
+      max-height none
+      min-height 50%
+
+      &:before
+        content ''
+        display block
+        position absolute
+        top 20px
+        left 0
+        border-top 1px solid #eff1f6
+        width 100%
+        background #f5f7fa
+
+      ul li
+        padding-right 60px
+
+        a.space-name
+          margin 0
+
+          h5
+            color #333
