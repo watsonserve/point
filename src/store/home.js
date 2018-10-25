@@ -26,8 +26,8 @@ export default {
         getPages({state, dispatch, commit}, payload) {
             return Promise.resolve();
         },
-        getSpaces({commit}, payload) {
-            return di.getSpaces(payload)
+        getSpaces({commit}) {
+            return di.getSpaces()
             .then(ret => {
                 commit('spaces', ret);
             })
