@@ -1,8 +1,3 @@
-/**
- * @file 详情页
- * @author wutong<wutong19@baidu.com>
- */
-
 import Page from '@/dataObject/Page';
 import di from '@/dataObject/dataInterface';
 

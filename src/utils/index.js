@@ -1,8 +1,3 @@
-/**
- * @file 功能工具
- * @author wangxingzhuo<wangxingzhuo@baidu.com>
- */
-
 import di from './dataInterface';
 import {pageAddress} from '@/router';
 

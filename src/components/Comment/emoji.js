@@ -1,8 +1,3 @@
-/**
- * @file at
- * @author wutong<wutong19@baidu.com>
- */
-
 export default function getEmoji() {
     const emojiList = [
         '😁', '😂', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😌', '😍', '😏',

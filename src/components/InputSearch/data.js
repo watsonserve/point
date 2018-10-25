@@ -1,8 +1,3 @@
-/**
- * @file data
- * @author wangxingzhuo<wangxingzhuo@baidu.com>
- */
-
 export function getDefaultData() {
   return {
     history: ['交互设计', '需求分析', '竞品分析', '用户体验', '数据分析', '运营', '数据分析', '交互设计', '需求分析'],

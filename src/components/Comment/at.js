@@ -1,8 +1,3 @@
-/**
- * @file at
- * @author wutong<wutong19@baidu.com>
- */
-
 // 统计光标之前的字符串
 function posCursor(obj) {
     const isIE = !(!document.all);

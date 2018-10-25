@@ -1,8 +1,3 @@
-/**
- * @file 数据接口层
- * @author wangxingzhuo<wangxingzhuo@baidu.com>
- */
-
 import axios from 'axios';
 import queryString from 'query-string';
 

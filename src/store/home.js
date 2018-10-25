@@ -1,8 +1,5 @@
 /* eslint-disable */
-/**
- * @file 首页
- * @author wangxingzhuo<wangxingzhuo@baidu.com>
- */
+
 import * as di from "@/DAL/home.js";
 
 export default {

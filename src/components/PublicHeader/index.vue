@@ -3,10 +3,6 @@
         <router-link class="logo" to="/">
             <img src="../../assets/img/logo.svg" />
         </router-link>
-        <!-- <input-search placeholder="搜索你想找的"
-            action="//neisou.baidu.com/new/search" name="word"
-            :associate="{action: '//family.baidu.com/search/ns/suggest', method: 'jsonp', name: 'word'}"
-        /> -->
     </header>
 </template>
 

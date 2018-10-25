@@ -1,8 +1,3 @@
-/**
- * @file 数据
- * @author wutong19<wutong19@baidu.com>
- */
-
 export const searchResult = {
     keywords: ['赵海'],
     results: {
@@ -43,13 +38,13 @@ export const searchResult = {
                 headImg: './head.png',
                 name: '赵海',
                 department: '流程信息管理部',
-                email: 'liweiwei03@baidu.com'
+                email: 'zhaohai@somewhere.com'
             },
             {
                 headImg: './head.png',
                 name: '赵海',
                 department: '流程信息管理部',
-                email: 'liweiwei03@baidu.com'
+                email: 'zhaohai01@somewhere.com'
             }
         ],
         files: [

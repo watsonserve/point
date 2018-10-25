@@ -1,8 +1,3 @@
-/**
- * @file store
- * @author wangxingzhuo<wangxingzhuo@baidu.com>
- */
-
 import Vue from 'vue';
 import Vuex from 'vuex';
 import di from '../utils/dataInterface';
@@ -90,7 +85,6 @@ export default new Vuex.Store({
         },
         userInfo(state, payload) {
             state.userInfo = payload;
-            state.userInfo.avatar = `//neisou.baidu.com/images/headportrait/${payload.userName}/default.jpg`;
         },
         userData(state, payload) {
             state.userData = payload;

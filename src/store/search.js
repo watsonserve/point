@@ -1,8 +1,3 @@
-/**
- * @file 搜索
- * @author wangxingzhuo<wangxingzhuo@baidu.com>
- */
-
 export default {
     namespaced: true,
     state: {
