@@ -6,6 +6,7 @@ function resolve(dir) {
 }
 
 module.exports = {
+  baseUrl: '//zh-cn.static-res.store/wiki/',
   // proxyTable: {
   //   '/api': {
   //     target: 'http://localhost:8081/api',

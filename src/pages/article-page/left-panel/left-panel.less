@@ -1,135 +1,50 @@
-/**
- * @file left panel style
- */
-
-.viewport #app .left-panel {
+.left-panel {
     position: relative;
     width: 100%;
     height: 100%;
     margin-left: 0;
-    padding: 150px 0 0;
+    padding: 140px 0 0;
 
-    .oaui-dropdown-item:hover {
-        background: #4786ff;
-
-        a {
-            color: #fff;
-        }
-    }
-
-    .space-card {
+    .space-info {
         position: absolute;
         top: 0;
         left: 0;
+        padding-top: 20px;
         width: 100%;
-        height: 150px;
+        height: 120px;
         background: #fff;
 
-        .care {
-            position: absolute;
-            top: 15px;
-            right: 1em;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .space-info {
+        em.point {
             display: block;
-            width: 100%;
-            height: 120px;
-            padding-top: 20px;
-            font-size: 18px;
-            font-weight: 400;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
+            font-size: 30px;
+            line-height: 50px;
             text-align: center;
-            color: #333;
-
-            em {
-                display: block;
-                width: 50px;
-                height: 50px;
-                margin: 0 auto 10px;
-                font-size: 30px;
-                line-height: 50px;
-                text-align: center;
-                color: #fff;
-                border-radius: 100%;
-                cursor: pointer;
-            }
+            color: #fff;
+            border-radius: 100%;
+        }
+        .space-name {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: normal;
         }
 
-        footer {
-            text-align: center;
-
-            & > ul > li {
-                margin: 0 9px;
-
-                &.administrator li.oaui-dropdown-item a {
-                    display: block;
-                    line-height: 28px;
-    
-                    span.avatar {
-                        display: inline-block;
-                        margin-right: 8px;
-                        border-radius: 12px;
-                        width: 24px;
-                        height: 24px;
-                        vertical-align: middle;
-                        background-size: cover;
-                    }
-    
-                    &:hover {
-                        color: #fff;
-                    }
-                }
-            }
-        }
     }
 
-    .features {
-        position: relative;
-        padding: 76px 20px 30px;
-        height: 100%;
+    .features .link {
+        display: block;
+        padding: 0 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 32px;
 
-        .panel-search {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 26px 20px 0;
-            width: 100%;
-
-            .wrap {
-                position: relative;
-                width: 100%;
-            
-                .search {
-                    display: block;
-                    position: relative;
-                    width: 100%;
-            
-                    input {
-                        border: 0 solid;
-                        border-radius: 20px;
-                        padding-right: 20px;
-                        background: #fff;
-                    }
-                }
-            
-                button {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    border-radius: 0 20px 20px 0;
-                    width: 34px;
-                    height: 34px;
-                    font-size: 16px;
-                    background: transparent;
-                }
-            }
-        }
-
-        .tree-container {
-            height: 100%;
-            overflow: auto;
+        &.router-link-active {
+            color: #fff;
+            background: #b6dbf6;
         }
     }
 }

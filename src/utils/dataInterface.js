@@ -5,25 +5,33 @@ function toUrlencode(params) {
   return queryString.stringify(params);
 }
 
-const instance = axios.create({
-  baseURL: '/api/',
-  timeout: 3000,
-  headers: {
-  'Content-Type': 'application/x-www-form-urlencoded'
+axios.defaults.timeout = 5000;
+
+export default function accessInterface({url, method = 'get', params = {}, errmsg = '接口异常', headers = {}}) {
+  let reqArgs = {_: Date.now()};
+  if ('get' === method) {
+    reqArgs = {...params, ...reqArgs};
   }
-});
-
-export default function accessInterface({url, method = 'get', params = {timestamp: Date.now()}, errmsg = '接口异常', headers = {}}) {
-  return instance[method](url, toUrlencode(params), {headers})
+  return axios({
+    url,
+    method,
+    params: reqArgs,
+    headers,
+    data: 'get' === method ? null : params
+  })
   .then(res => {
-    const data = res.data;
-
-    // 接口返回失败消息
-    if (!data.status) {
-      return Promise.reject(data.message);
+    const contentType = res.headers['Content-Type'] || '';
+    const body = res.data;
+    if ('text/plain' === contentType.split(';')[0]) {
+      return body;
     }
 
-    return data.data;
+    // 接口返回失败消息
+    if (!body.status) {
+      return Promise.reject(body.message);
+    }
+
+    return body.data;
   })
   .catch(err => {
     return Promise.reject(err || errmsg);

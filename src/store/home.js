@@ -1,61 +1,58 @@
 /* eslint-disable */
 
 import * as di from "@/DAL/home.js";
+import {dateFormat} from '@/utils';
 
 export default {
     namespaced: true,
     state: {
-        pages: {
-            list: [],
-            total: 50
-        },
         spaces: {
             list: [],
             total: 50
         },
         curSpace: {
-          spaceId: '123',
-          spaceName: '前端代码规范'
+          spaceId: 'undefined-space-id',
+          spaceName: '未知空间',
+          bgColor: NaN,
+          articles: []
         },
-        pageLoading: true
+        curArticle: {}
     },
     actions: {
-        getPages({state, dispatch, commit}, payload) {
-            return Promise.resolve();
-        },
         getSpaces({commit}) {
             return di.getSpaces()
             .then(ret => {
                 commit('spaces', ret);
             })
+            .catch(err => {
+                console.log(err);
+            });
         },
         getSpaceById({commit}, spaceId) {
             return di.getSpaceById(spaceId)
             .then(ret => {
-                commit('space', {spaceName: ret.spaceName});
-                commit('pages', {list: ret.pages, total: ret.total});
+                commit('space', ret);
+            });
+        },
+        getArticleById({commit}, articleId) {
+            return di.getArticleById(articleId)
+            .then(ret => {
+                commit('space', ret.space);
+                commit('article', ret.article);
             });
         }
     },
     mutations: {
         space(state, payload) {
+            payload.bgColor = payload.spaceName.charCodeAt() % 7;
             state.curSpace = payload;
         },
         spaces(state, payload) {
             state.spaces = payload;
         },
-        pages(state, payload) {
-            console.log(payload);
-            state.pages = payload;
-        },
-        pageLoading(state, payload) {
-            state.pageLoading = payload;
-        },
-        rightPanelVisible(state) {
-            state.rightPanelVisible = !state.rightPanelVisible;
-        },
-        searchSpaces(state, list) {
-            state.searchSpaces = list;
+        article(state, payload) {
+            payload.updateTime = dateFormat(payload.updateTime);
+            state.curArticle = payload;
         }
     }
 };

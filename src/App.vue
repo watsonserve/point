@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import PublicHeader from '@/components/PublicHeader';
+import PublicHeader from '@/components/public-header';
 
 export default {
     name: 'app',

@@ -3,8 +3,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Index from '@/pages/Index';
-// import SpaceInfo from ;
-// import SearchResult from '@/pages/SearchResult';
+import SpaceInfo from '@/pages/space-info';
+import ArticlePage from '@/pages/article-page';
 
 Vue.use(Router);
 
@@ -17,7 +17,12 @@ export default new Router({
   }, {
     path: '/space/:spaceId',
     name: 'space',
-    component: _ => require('@/pages/space-info'),
+    component: SpaceInfo,
+    props: true
+  }, {
+    path: '/article/:articleId',
+    name: 'article',
+    component: ArticlePage,
     props: true
   // }, {
   //     path: '/search_result/',
