@@ -2,9 +2,10 @@
 
 import Vue from 'vue';
 import Router from 'vue-router';
-import Index from '@/pages/Index';
+import Home from '@/pages/home';
 import SpaceInfo from '@/pages/space-info';
 import ArticlePage from '@/pages/article-page';
+import Editor from '@/pages/editor';
 
 Vue.use(Router);
 
@@ -12,22 +13,22 @@ export default new Router({
   mode: 'history',
   routes: [{
     path: '/',
-    name: 'index',
-    component: Index
+    name: 'home',
+    component: Home
   }, {
     path: '/space/:spaceId',
     name: 'space',
     component: SpaceInfo,
-    props: true
+    props: true,
   }, {
     path: '/article/:articleId',
     name: 'article',
     component: ArticlePage,
     props: true
-  // }, {
-  //     path: '/search_result/',
-  //     name: 'search_result',
-  //     component: SearchResult,
-  //     props: true
+  }, {
+    path: '/edit/:spaceId/:articleId?',
+    name: 'new-article',
+    component: Editor,
+    props: true
   }]
 });

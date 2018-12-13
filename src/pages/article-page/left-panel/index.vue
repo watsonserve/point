@@ -13,18 +13,14 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
-import {pageAddress} from '@/router';
-import PageNode from '../page-node';
-
 export default {
   name: 'left-panel',
   props: {
     value: {
       type: Object,
-      default: _ => ({})
+      default: () => ({})
     }
   }
 }
 </script>
-<style lang="less" scoped src="./left-panel.less"></style>
+<style lang="stylus" scoped src="./left-panel.styl"></style>

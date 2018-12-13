@@ -55,8 +55,13 @@ export default {
   },
   created() {
     this.getArticleById(this.articleId);
+  },
+  watch: {
+    articleId(id) {
+      this.getArticleById(id);
+    }
   }
 }
 </script>
 
-<style lang="less" scoped src="./details.less" />
+<style lang="stylus" scoped src="./details.styl" />

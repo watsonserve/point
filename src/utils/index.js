@@ -1,28 +1,12 @@
 import di from './dataInterface';
-import {pageAddress} from '@/router';
 
-export function gotoSpaceHome(self, space) {
-    if (space.homePageId) {
-        self.$router.push(pageAddress(space.homePageId));
-        return;
-    }
-    di.getSpaceInfo(space.spaceId)
-    .then(result => {
-        self.$router.push(pageAddress(result.homePageId));
-    })
-    .catch(msg => {
-        self.$store.dispatch('error', msg, {root: true});
-    });
-}
 export function htmlUnescape(str) {
-    /* eslint-disable */
     return str
         .replace(/&quot;/g, '"')
         .replace(/&#39;/g, "'")
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&amp;/g, '&');
-    /* eslint-enable */
 }
 export function computeFileSize(fsize) {
     const size = [

@@ -22,7 +22,7 @@ import PublicFooter from '@/components/public-footer';
 import RightPanel from './right-panel';
 
 export default {
-  name: 'Index',
+  name: 'home',
   components: {PublicFooter, RightPanel},
   data () {
     return {

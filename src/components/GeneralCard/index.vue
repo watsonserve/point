@@ -23,7 +23,6 @@
 
 <script>
 import {gotoSpaceHome} from '@/utils';
-import {pageAddress} from '@/router';
 
 
 export default {
@@ -37,7 +36,6 @@ export default {
             });
         },
         remove () {},
-        pageAddress: pageAddress,
         gotoSpaceHome(spaceId) {
             gotoSpaceHome(this, spaceId);
         }
