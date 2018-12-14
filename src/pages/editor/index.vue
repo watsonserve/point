@@ -1,13 +1,19 @@
 <template>
   <main class="editor">
-    <section>
+    <section class="editing">
       <v-text-field v-model="title" placeholder="标题" />
       <v-textarea v-model="content" :no-resize="true" />
+    </section>
+    <section class="previewing">
+      <h3>{{ title }}</h3>
+      <article>{{ previewContent }}</article>
     </section>
   </main>
 </template>
 
 <script>
+import MarkdownIt from 'markdown-it';
+
 export default {
   name: 'editor',
   props: {
@@ -25,6 +31,14 @@ export default {
       title: '',
       content: ''
     };
+  },
+  computed: {
+    previewContent() {
+      return this.md.render(this.content);
+    }
+  },
+  created() {
+    this.md = new MarkdownIt();
   }
 }
 </script>

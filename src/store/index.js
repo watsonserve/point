@@ -54,7 +54,7 @@ export default new Vuex.Store({
                 commit('msg', msg);
             }
         },
-        userInfo({state, dispatch, commit}) {
+        userInfo({dispatch, commit}) {
             return di.getUserInfo()
             .then(result => {
                 commit('userInfo', result);
@@ -63,7 +63,7 @@ export default new Vuex.Store({
                 dispatch('error', msg);
             });
         },
-        userData({state, dispatch, commit}) {
+        userData({dispatch, commit}) {
             return di.getUserData()
             .then(result => {
                 commit('userData', result);

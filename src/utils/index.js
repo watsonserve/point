@@ -1,4 +1,3 @@
-import di from './dataInterface';
 
 export function htmlUnescape(str) {
     return str

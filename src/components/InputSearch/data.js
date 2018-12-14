@@ -1,22 +1,5 @@
 export function getDefaultData() {
-  return {
-    history: ['交互设计', '需求分析', '竞品分析', '用户体验', '数据分析', '运营', '数据分析', '交互设计', '需求分析'],
-    hot: ['交互设计', '需求分析', '竞品分析', '用户体验', '数据分析', '运营', '数据分析', '交互设计', '需求分析'],
-    hotImg: [
-      {
-        title: '公司代码规范',
-        img: 'http://img2.mukewang.com/szimg/5a17ef670001292c05400300.jpg'
-      },
-      {
-        title: '公司代码规范',
-        img: 'http://img2.mukewang.com/szimg/5a17ef670001292c05400300.jpg'
-      },
-      {
-        title: '公司代码规范',
-        img: 'http://img2.mukewang.com/szimg/5a17ef670001292c05400300.jpg'
-      }
-    ]
-  }
+  return {}
 };
 
 export function getNormalData() {

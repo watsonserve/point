@@ -1,9 +1,4 @@
 import axios from 'axios';
-import queryString from 'query-string';
-
-function toUrlencode(params) {
-  return queryString.stringify(params);
-}
 
 axios.defaults.timeout = 5000;
 
