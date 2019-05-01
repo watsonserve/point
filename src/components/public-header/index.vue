@@ -7,11 +7,9 @@
 </template>
 
 <script>
-import InputSearch from '@/components/InputSearch';
 
 export default {
-    name: 'PublicHeader',
-    components: {InputSearch}
+    name: 'public-header'
 }
 </script>
 

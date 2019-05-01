@@ -4,7 +4,7 @@
       <div class="content" ref="content">
         <div class="cards">
           <ul class="list-unstyled list-inline attention">
-            <li class="animated" v-for="item in pages" :key="item.pageId">
+            <li class="animated" v-for="item in articles" :key="item.ariticleId">
               <attention-card :data="item" />
             </li>
           </ul>
@@ -23,8 +23,8 @@ import RightPanel from './right-panel';
 
 export default {
   name: 'home',
-  components: {PublicFooter, RightPanel},
-  data () {
+  components: { PublicFooter, RightPanel },
+  data() {
     return {
       errno: 0,
       errmsg: '未初始化',
@@ -32,17 +32,26 @@ export default {
     }
   },
   computed: {
-    ...mapState('home', {
+    ...mapState('space', {
       spaces(state) {
-        return state.spaces.list;
+        const spaces = state.spaces;
+        return Object.keys(spaces).map(key => spaces[key]);
+      }
+    }),
+    ...mapState('article', {
+      articles(state) {
+        const articles = state.articles;
+        return Object.keys(articles).map(key => articles[key]);
       }
     })
   },
   methods: {
-    ...mapActions('home', ['getSpaces'])
+    ...mapActions('space', ['getAllSpaces']),
+    ...mapActions('article', ['getAllArticles'])
   },
   created() {
-    this.getSpaces();
+    this.getAllArticles({offset: 0, limit: 50});
+    this.getAllSpaces();
   }
 }
 </script>

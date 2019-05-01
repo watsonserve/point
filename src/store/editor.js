@@ -1,9 +1,4 @@
-/**
- * @file editor.js
- * @author liuhui
- */
 
-import di from '../dataObject';
 export default {
     namespaced: true,
     state: {

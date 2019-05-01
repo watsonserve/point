@@ -1,14 +1,16 @@
 <template>
   <main class="space-info">
-    <div class="space-card">
-      <em class="point" :class="`random-bg-color-${bgColor}`">{{ spaceName[0] }}</em>
-      <span class="name">{{ spaceName }}</span>
-    </div>
-    <ul class="list-unstyled">
-      <router-link tag="li" :to="`/article/${item.pageId}`" v-for="item in articles" :key="item.pageId">
-        <a href="javascript:;">{{ item.title }}</a>
-      </router-link>
-    </ul>
+    <aside class="left-panel">
+      <div class="space-card">
+        <em class="point" :class="`random-bg-color-${bgColor}`">{{ spaceName[0] }}</em>
+        <span class="name">{{ spaceName }}</span>
+      </div>
+      <ul class="list-unstyled">
+        <router-link tag="li" :to="`/article/${item.pageId}`" v-for="item in articles" :key="item.pageId">
+          <a href="javascript:;">{{ item.title }}</a>
+        </router-link>
+      </ul>
+    </aside>
   </main>
 </template>
 
