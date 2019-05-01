@@ -1,7 +1,7 @@
 import accessInterface from '@/utils/dataInterface';
 
-export function getUserInfo () {
-  return accessInterface({url: '/api/user.json'});
+export function getUserInfo (salt) {
+  return accessInterface({url: '/api/user.json', params: {salt}});
 }
 
 export function getSpaces() {
@@ -9,7 +9,7 @@ export function getSpaces() {
 }
 
 export function getArticles(offset = 0, limit = 50) {
-  return accessInterface({url: '/api/articles.json'});
+  return accessInterface({url: '/api/articles.json', params: {offset: 0, limit: 50}});
 }
 
 export function getSpaceById(spaceId) {

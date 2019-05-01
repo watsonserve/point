@@ -26,24 +26,27 @@ export default {
     }
   },
   computed: {
-    ...mapState('home', {
-      spaceName(state) {
-        return state.curSpace.spaceName;
-      },
-      bgColor(state) {
-        return state.curSpace.bgColor;
-      },
-      articles(state) {
-        return state.curSpace.articles;
+    ...mapState('space', {
+      space(state) {
+        return state.spaces[this.spaceId] || {};
       }
-    })
+    }),
+    spaceName() {
+      return this.space.spaceName;
+    },
+    bgColor() {
+      return this.space.bgColor;
+    },
+    articles() {
+      return this.space.articles;
+    }
   },
   methods: {
-    ...mapActions('home', ['getSpaceById'])
+    ...mapActions('space', ['getSpaceById'])
   },
-  created() {
-    this.getSpaceById(this.spaceId);
-  }
+  // created() {
+  //   this.getSpaceById(this.spaceId);
+  // }
 }
 </script>
 

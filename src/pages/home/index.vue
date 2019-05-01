@@ -20,10 +20,11 @@
 import {mapState, mapActions} from 'vuex';
 import PublicFooter from '@/components/public-footer';
 import RightPanel from './right-panel';
+import AttentionCard from './attention-card';
 
 export default {
   name: 'home',
-  components: { PublicFooter, RightPanel },
+  components: { PublicFooter, RightPanel, AttentionCard },
   data() {
     return {
       errno: 0,

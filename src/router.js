@@ -2,12 +2,7 @@
 
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/pages/home';
-import SpaceInfo from '@/pages/space-info';
-import ArticlePage from '@/pages/article-page';
-import Editor from '@/pages/editor';
-import {URI} from '@/helper';
-import {loadUser} from '@/helper/permission';
+import {checkEditable} from '@/helper/permission';
 
 Vue.use(Router);
 
@@ -16,35 +11,25 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'home',
-    component: Home
+    component: _ => import('@/pages/home')
   }, {
     path: '/space/:spaceId',
     name: 'space',
-    component: SpaceInfo,
+    component: _ => import('@/pages/space-info'),
     props: true,
   }, {
     path: '/article/:articleId',
     name: 'article',
-    component: ArticlePage,
+    component: _ => import('@/pages/article-page'),
     props: true
   }, {
     path: '/editor/:articleId?',
     name: 'new-article',
-    component: Editor,
+    component: _ => import('@/pages/editor'),
     props: true,
     beforeEnter: (to, from, next) => {
-      loadUser()
-      .then(_ => next())
-      .catch(_ => {
-        const passport = {
-          app: 'wiki',
-          token: '',
-          sign: '',
-          redirect: window.location.href
-        };
-
-        window.location.href = `https://passport.cn-bar.com/?${URI.encode(passport)}`;
-      });
+      checkEditable()
+      .then(_ => next());
     }
   }]
 });

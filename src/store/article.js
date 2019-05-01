@@ -6,7 +6,7 @@ class Article {
     Object.keys(val).forEach(key => {
       this[key] = val[key];
     });
-    this.updateTime = dateFormat(val.updateTime);
+    this.updateTime = dateFormat(1000 * val.updateTime);
   }
 }
 
@@ -21,12 +21,12 @@ export default {
     update() {},
     getArticleById(_, articleId) {
       return di.getArticleById(articleId)
-      .then(ret => new Article(ret));
+      .then(ret => new Article(ret.article));
     },
     getAllArticles({commit}, {offset, limit}) {
       return di.getArticles(offset, limit)
       .then(ret => {
-        commit('articles', ret);
+        commit('articles', ret.list);
       })
       .catch(err => {
         console.error(err);
@@ -36,7 +36,7 @@ export default {
   mutations: {
     articles(state, payload) {
       state.articles = payload.reduce((pre, item) => {
-        pre[item.spaceId] = new Article(item);
+        pre[item.pageId] = new Article(item);
         return pre;
       }, {});
     }

@@ -1,7 +1,7 @@
 <template>
   <main class="detail">
-    <LeftLayout>
-      <left-panel slot="leftPanel" :value="space" />
+    <left-layout>
+      <!-- <left-panel slot="leftPanel" :value="space" /> -->
       <div class="page-content" v-if="article">
         <header class="main-header">
           <h3 class="captain-title">
@@ -17,7 +17,7 @@
           <article class="article" v-html="article.content"></article>
         </div>
       </div>
-    </LeftLayout>
+    </left-layout>
   </main>
 </template>
 
@@ -37,28 +37,22 @@ export default {
   },
   data() {
     return {
+      article: {},
       pageInfoVisit: false
     };
   },
-  computed: {
-    ...mapState('home', {
-      space(state) {
-        return state.curSpace;
-      },
-      article(state) {
-        return state.curArticle;
-      }
-    })
-  },
   methods: {
-    ...mapActions('home', ['getArticleById'])
+    ...mapActions('article', ['getArticleById']),
+    loadArticle(id) {
+      this.getArticleById(id).then(data => this.article = data);
+    }
   },
   created() {
-    this.getArticleById(this.articleId);
+    this.loadArticle(this.articleId);
   },
   watch: {
     articleId(id) {
-      this.getArticleById(id);
+      this.loadArticle(id);
     }
   }
 }
