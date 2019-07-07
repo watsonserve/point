@@ -6,7 +6,7 @@
     </section>
     <section class="previewing">
       <h3>{{ title }}</h3>
-      <article>{{ previewContent }}</article>
+      <article class="previewing__article" editable>{{ previewContent }}</article>
     </section>
   </main>
 </template>
