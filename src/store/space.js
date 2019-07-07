@@ -7,10 +7,10 @@ class Space {
   articles = [];
 
   constructor(val) {
-    this.spaceId = val.spaceId;
-    this.spaceName = val.spaceName;
+    this.spaceId = val.space_id;
+    this.spaceName = val.space_name;
     this.articles = val.articles;
-    this.bgColor = val.spaceName.charCodeAt() % 7;
+    this.bgColor = val.space_name.charCodeAt() % 7;
   }
 }
 
@@ -40,7 +40,7 @@ export default {
   mutations: {
     spaces(state, payload) {
       state.spaces = payload.reduce((pre, item) => {
-        pre[item.spaceId] = new Space(item);
+        pre[item.space_id] = new Space(item);
         return pre;
       }, {});
     }

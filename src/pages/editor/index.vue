@@ -2,11 +2,7 @@
   <main class="editor">
     <section class="editing">
       <v-text-field v-model="title" placeholder="标题" />
-      <v-textarea v-model="content" :no-resize="true" />
-    </section>
-    <section class="previewing">
-      <h3>{{ title }}</h3>
-      <article class="previewing__article" editable>{{ previewContent }}</article>
+      <article class="editing__article" contenteditable>{{ previewContent }}</article>
     </section>
   </main>
 </template>

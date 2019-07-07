@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex';
+import {mapActions} from 'vuex';
 import LeftLayout from '@/components/LeftLayout';
-import LeftPanel from './left-panel';
+// import LeftPanel from './left-panel';
 
 export default {
   name: 'article-page',
-  components: {LeftLayout, LeftPanel},
+  components: {LeftLayout},
   props: {
     articleId: {
       type: String,

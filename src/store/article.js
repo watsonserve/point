@@ -3,10 +3,10 @@ import {dateFormat} from '@/utils';
 
 class Article {
   constructor(val) {
-    Object.keys(val).forEach(key => {
-      this[key] = val[key];
-    });
-    this.updateTime = dateFormat(1000 * val.updateTime);
+    this.title = val.title;
+    this.content = val.content;
+    this.pageId = val.page_id;
+    this.updateTime = dateFormat(1000 * val.update_time);
   }
 }
 
@@ -36,7 +36,7 @@ export default {
   mutations: {
     articles(state, payload) {
       state.articles = payload.reduce((pre, item) => {
-        pre[item.pageId] = new Article(item);
+        pre[item.page_id] = new Article(item);
         return pre;
       }, {});
     }
