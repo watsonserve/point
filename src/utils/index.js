@@ -1,46 +1,25 @@
 
 export function htmlUnescape(str) {
-    return str
-        .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&');
+  return str
+  .replace(/&quot;/g, '"')
+  .replace(/&#39;/g, "'")
+  .replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>')
+  .replace(/&amp;/g, '&');
 }
-export function computeFileSize(fsize) {
-    const size = [
-        {
-            unit: 'B',
-            minNum: 0,
-            maxNum: Math.pow(2, 10)
-        },
-        {
-            unit: 'KB',
-            minNum: Math.pow(2, 10),
-            maxNum: Math.pow(2, 20)
-        },
-        {
-            unit: 'MB',
-            minNum: Math.pow(2, 20),
-            maxNum: Math.pow(2, 30)
-        },
-        {
-            unit: 'GB',
-            minNum: Math.pow(2, 30),
-            maxNum: Math.pow(2, 40)
-        },
-        {
-            unit: 'TB',
-            minNum: Math.pow(2, 40),
-            maxNum: Math.pow(2, 50)
-        }
-    ];
 
-    for (let i = 0; i < size.length; i++) {
-        if (fsize < size[i].maxNum && fsize >= size[i].minNum) {
-            return (fsize / size[i].minNum).toFixed(2) + size[i].unit;
-        }
-    }
+export function computeFileSize(rcx) {
+  const size = ['B', 'KB', 'MB', 'GB', 'TB'];
+  let rax, rbx = 1;
+  const rdx = rcx;
+
+  // 计算数量级
+  for (rax = 0; rax < size.length && 1023 < rcx; rcx = Math.floor(rcx / 1024), rbx *= 1024, rax++);
+  // 得到显示的浮点数
+  let [r8, r9] = (rdx / rbx).toFixed(3).split('.');
+  for (rcx = r9.length - 1; 0 <= rcx && r9[rcx] === '0'; rcx--);
+  r9 = rcx < 0 ? '' : `.${r9.substr(0, rcx + 1)}`;
+  return `${r8}${r9}${size[rax]}`;
 }
 
 export function searchResultHightLight(str, keywords) {
@@ -50,8 +29,8 @@ export function searchResultHightLight(str, keywords) {
     }
 }
 
-function numberPad(that, fix = 2) {
-    return (that / 100).toFixed(fix).split('.')[1];
+export function numberPad(that, fix = 2) {
+  return (that / 100).toFixed(fix).split('.')[1];
 }
 
 export function dateFormat(that) {
@@ -95,7 +74,3 @@ export function dateUpdate(time) {
     const days = numberPad(time.getDate());
     return `${years}${months}月${days}日${hours}:${minutes}`;
 }
-
-export default {
-    numberPad: numberPad
-};
