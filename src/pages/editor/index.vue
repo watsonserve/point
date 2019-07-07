@@ -1,9 +1,7 @@
 <template>
   <main class="editor">
-    <section class="editing">
-      <v-text-field v-model="title" placeholder="标题" />
-      <article class="editing__article" contenteditable>{{ previewContent }}</article>
-    </section>
+    <v-text-field v-model="title" placeholder="标题" />
+    <article class="editing__article" contenteditable>{{ previewContent }}</article>
   </main>
 </template>
 
