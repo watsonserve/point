@@ -22,6 +22,6 @@ export default Vue.extend({
       default: () => ({})
     }
   }
-}
+});
 </script>
 <style lang="stylus" scoped src="./left-panel.styl"></style>

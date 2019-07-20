@@ -39,7 +39,7 @@ export default Vue.extend({
   created() {
     this.md = new MarkdownIt();
   }
-}
+});
 </script>
 
 <style lang="stylus" scoped src="./index.styl" />

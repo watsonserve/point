@@ -56,7 +56,7 @@ export default Vue.extend({
       this.loadArticle(id);
     }
   }
-}
+});
 </script>
 
 <style lang="stylus" scoped src="./details.styl" />

@@ -55,7 +55,7 @@ export default Vue.extend({
     this.getAllArticles({offset: 0, limit: 50});
     this.getAllSpaces();
   }
-}
+});
 </script>
 
 <style lang="stylus" scoped src="./index.styl" />

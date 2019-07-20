@@ -26,7 +26,7 @@ export default Vue.extend({
   props: ['data'],
   methods: {
   }
-}
+});
 </script>
 
 <style lang="stylus" scoped src="./attention-card.styl"></style>

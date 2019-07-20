@@ -18,26 +18,25 @@
 
 <script lang="ts">
 import Vue from 'vue';
-  /* eslint-disable */
 
-  export default Vue.extend({
-    name: 'right-panel',
-    props: {
-      spaces: {
-        type: Array,
-        default: _ => []
-      },
-      value: {
-        type: Boolean,
-        default: true
-      }
+export default Vue.extend({
+  name: 'right-panel',
+  props: {
+    spaces: {
+      type: Array,
+      default: _ => []
     },
-    methods: {
-      toggerVisibleHandle() {
-        this.$emit('input', !this.value);
-      }
+    value: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    toggerVisibleHandle() {
+      this.$emit('input', !this.value);
     }
   }
+});
 </script>
 
 <style lang="stylus" scoped src="./right-panel.styl" />

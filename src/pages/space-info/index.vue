@@ -48,7 +48,7 @@ export default Vue.extend({
   // created() {
   //   this.getSpaceById(this.spaceId);
   // }
-}
+});
 </script>
 
 <style lang="less" scoped src="./index.styl" />
