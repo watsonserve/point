@@ -1,10 +1,11 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import {StdPacket} from '@/DAL/packet_pb';
 import {reduce} from '@/helper';
 
 axios.defaults.timeout = 5000;
 
-export default function accessInterface({url, method = 'get', params = {}, errmsg = '接口异常', headers = {}}) {
+export default function accessInterface(options: AxiosRequestConfig) {
+  let {url, method = 'get', params = {}, errmsg = '接口异常', headers = {}} = options;
   let reqArgs = {_: Date.now()};
   if ('get' === method) {
     reqArgs = {...params, ...reqArgs};

@@ -17,9 +17,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
   /* eslint-disable */
 
-  export default {
+  export default Vue.extend({
     name: 'right-panel',
     props: {
       spaces: {

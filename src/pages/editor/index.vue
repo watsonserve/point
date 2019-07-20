@@ -10,9 +10,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import MarkdownIt from 'markdown-it';
 
-export default {
+export default Vue.extend({
   name: 'editor',
   props: {
     spaceId: {

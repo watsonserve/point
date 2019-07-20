@@ -7,8 +7,10 @@
 </template>
 
 <script lang="ts">
-export default {
-    name: 'public-footer'
-}
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'public-footer'
+});
 </script>
 <style lang="less" scoped src="./public-footer.styl" />

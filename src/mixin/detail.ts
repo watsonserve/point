@@ -8,7 +8,7 @@ import {mapState} from 'vuex';
 import Page from '../dataObject/Page';
 import {htmlUnescape} from '@/utils';
 import showdown from 'showdown';
-export default {
+export default Vue.extend({
     computed: {
         ...mapState({
             pageSource(state) {

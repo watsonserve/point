@@ -8,12 +8,13 @@
 </template>
 
 <script lang="ts">
-import PublicHeader from '@/components/public-header';
+import Vue from 'vue';
+import PublicHeader from '@/components/public-header/index.vue';
 
-export default {
-    name: 'app',
-    components: {PublicHeader}
-}
+export default Vue.extend({
+  name: 'app',
+  components: { PublicHeader }
+});
 </script>
 
 <style lang="stylus" src="./assets/style/layout.styl"></style>

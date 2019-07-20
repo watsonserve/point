@@ -14,7 +14,7 @@ class Space {
   }
 }
 
-export default {
+export default Vue.extend({
   namespaced: true,
   state: {
     spaces: {}

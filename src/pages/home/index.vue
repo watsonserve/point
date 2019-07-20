@@ -17,12 +17,13 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import {mapState, mapActions} from 'vuex';
 import PublicFooter from '@/components/public-footer';
 import RightPanel from './right-panel';
 import AttentionCard from './attention-card';
 
-export default {
+export default Vue.extend({
   name: 'home',
   components: { PublicFooter, RightPanel, AttentionCard },
   data() {

@@ -22,10 +22,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import {gotoSpaceHome} from '@/utils';
 
-
-export default {
+export default Vue.extend({
     name: 'GeneralCard',
     props: ['data'],
     methods: {
@@ -40,9 +40,6 @@ export default {
             gotoSpaceHome(this, spaceId);
         }
     }
-}
+});
 </script>
-
-<style lang="less" scoped>
-    @import './general-card.styl';
-</style>
+<style lang="less" scoped src="./general-card.styl" />

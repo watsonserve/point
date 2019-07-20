@@ -1,5 +1,5 @@
 
-export default {
+export default Vue.extend({
     namespaced: true,
     state: {
         data: {}

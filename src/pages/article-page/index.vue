@@ -22,11 +22,12 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import {mapActions} from 'vuex';
 import LeftLayout from '@/components/LeftLayout';
 // import LeftPanel from './left-panel';
 
-export default {
+export default Vue.extend({
   name: 'article-page',
   components: {LeftLayout},
   props: {

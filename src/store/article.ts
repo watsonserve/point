@@ -2,7 +2,27 @@ import * as di from '@/DAL';
 import {dateFormat} from '@/utils';
 
 class Article {
-  constructor(val) {
+  /**
+   * 
+   */
+  private title: string;
+
+  /**
+   * 
+   */
+  private content: string;
+
+  /**
+   * 
+   */
+  private pageId: string;
+
+  /**
+   * 
+   */
+  private updateTime: string;
+
+  constructor(val: any) {
     this.title = val.title;
     this.content = val.content;
     this.pageId = val.page_id;
@@ -10,7 +30,7 @@ class Article {
   }
 }
 
-export default {
+export default Vue.extend({
   namespaced: true,
   state: {
     articles: {}

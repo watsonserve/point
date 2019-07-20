@@ -20,5 +20,12 @@ module.exports = {
         '@': resolve('src')
       }
     }
+  },
+  css: {
+    loaderOptions: {
+      stylus: {
+        import: resolve('src/assets/style/vars.styl')
+      },
+    }
   }
 };

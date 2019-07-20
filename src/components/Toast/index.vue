@@ -3,14 +3,15 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 
-export default {
-    name: 'Toast',
-    props: ['msg'],
-    watch: {
-        msg() {
-            this.$Message.error(this.msg);
-        }
+export default Vue.extend({
+  name: 'Toast',
+  props: ['msg'],
+  watch: {
+    msg() {
+      this.$Message.error(this.msg);
     }
-};
+  }
+});
 </script>

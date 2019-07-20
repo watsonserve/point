@@ -7,10 +7,10 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
     name: 'public-header'
-}
+});
 </script>
-
 <style lang="less" src="./public-header.styl" scoped></style>
