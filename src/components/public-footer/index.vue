@@ -6,9 +6,9 @@
   </footer>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'public-footer'
 }
 </script>
-<style lang="less" scoped src="./public-footer.less" />
+<style lang="less" scoped src="./public-footer.styl" />

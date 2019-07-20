@@ -21,7 +21,7 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import {mapActions} from 'vuex';
 import LeftLayout from '@/components/LeftLayout';
 // import LeftPanel from './left-panel';

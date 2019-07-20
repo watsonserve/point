@@ -19,7 +19,7 @@
     </section>
 </template>
 
-<script>
+<script lang="ts">
 import CommentNode from './Comment.vue';
 import TextareaBox from './Textarea.vue';
 
@@ -60,5 +60,5 @@ export default {
 </script>
 
 <style lang="less">
-    @import './comment.less';
+    @import './comment.styl';
 </style>

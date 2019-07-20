@@ -58,7 +58,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import {stringHandle, computedPos, addString} from './at';
 import clickOutside from 'click-outside';
 import getEmoji from './emoji';

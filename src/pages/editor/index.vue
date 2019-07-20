@@ -1,11 +1,15 @@
 <template>
   <main class="editor">
-    <v-text-field v-model="title" placeholder="标题" />
-    <article class="editing__article" contenteditable>{{ previewContent }}</article>
+    <tool-bar @command="" />
+    <article
+      class="editing__article"
+      contenteditable
+      @keyup.enter=""
+    >{{ previewContent }}</article>
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import MarkdownIt from 'markdown-it';
 
 export default {

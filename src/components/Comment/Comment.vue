@@ -53,7 +53,7 @@
     </li>
 </template>
 
-<script>
+<script lang="ts">
 import {dateUpdate} from '@/utils';
 import TextareaBox from './Textarea.vue';
 

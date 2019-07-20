@@ -16,7 +16,7 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import {mapState, mapActions} from 'vuex';
 import PublicFooter from '@/components/public-footer';
 import RightPanel from './right-panel';

@@ -21,7 +21,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import {gotoSpaceHome} from '@/utils';
 
 
@@ -44,5 +44,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    @import './general-card.less';
+    @import './general-card.styl';
 </style>

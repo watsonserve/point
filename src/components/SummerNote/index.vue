@@ -2,7 +2,7 @@
     <div id="summernote"></div>
 </template>
 
-<script>
+<script lang="ts">
     import 'summernote';
     import $ from 'jquery';
     import 'summernote/dist/lang/summernote-zh-CN.js';

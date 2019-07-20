@@ -13,7 +13,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'LeftLayout',
     data() {
@@ -56,5 +56,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import './left-layout.less';
+@import './left-layout.styl';
 </style>

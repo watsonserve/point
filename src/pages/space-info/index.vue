@@ -14,7 +14,7 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import {mapState, mapActions} from 'vuex';
 
 export default {
@@ -50,4 +50,4 @@ export default {
 }
 </script>
 
-<style lang="less" scoped src="./index.less" />
+<style lang="less" scoped src="./index.styl" />

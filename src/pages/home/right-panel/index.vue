@@ -16,7 +16,7 @@
   </aside>
 </template>
 
-<script>
+<script lang="ts">
   /* eslint-disable */
 
   export default {

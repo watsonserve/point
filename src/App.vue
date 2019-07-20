@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import PublicHeader from '@/components/public-header';
 
 export default {

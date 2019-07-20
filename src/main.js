@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import Vue from 'vue'
 import {sync} from 'vuex-router-sync'
 import router from './router'

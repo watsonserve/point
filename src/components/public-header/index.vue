@@ -6,11 +6,11 @@
     </header>
 </template>
 
-<script>
+<script lang="ts">
 
 export default {
     name: 'public-header'
 }
 </script>
 
-<style lang="less" src="./public-header.less" scoped></style>
+<style lang="less" src="./public-header.styl" scoped></style>
