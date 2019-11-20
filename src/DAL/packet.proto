@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package proto;
-
-message StdPacket {
-  bool status = 1;
-  string msg = 2;
-  bytes data = 3;
-}

@@ -1,0 +1,64 @@
+@import '~@/assets/style/vars.styl'
+
+main.booking .container
+  dl.order-set
+    margin-bottom 6vw
+
+    dt.order-set__info, dd.order-set__list
+      padding 0 4vw
+
+    dt.order-set__info
+      margin-bottom 2vw
+      font-size 4vw
+      line-height 8vw
+      background #eee
+
+    dd.order-set__list ul.ordre-list
+      li.ordre-list__item
+        border-bottom 1px solid $lineColor
+        padding 2vw 0
+
+
+.cards
+  position relative
+  margin 0 auto
+  padding 20px 20px 0
+
+  & > ul
+    margin 0 -10px
+
+    & > li
+      float left
+      margin-bottom 20px
+      padding 0 10px
+      text-align center
+      animation-name slideInUp
+
+      .card
+        width 80%
+
+    // 大卡片
+    @media screen and (min-width:2410px)
+      &.attention > li
+        width 20%
+
+        .attention-card
+          min-width 100%
+
+    @media screen and (min-width:1940px) and (max-width:2409px)
+      &.attention > li
+        width 25%
+
+        .attention-card
+          min-width 100%
+
+    @media screen and (min-width:1470px) and (max-width:1939px)
+      &.attention > li
+        width 33.333%
+
+        .attention-card
+          max-width 480px
+
+    @media screen and (max-width:1469px)
+      &.attention > li
+        width 50%
