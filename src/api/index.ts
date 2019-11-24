@@ -1,22 +1,13 @@
 import request, { Method } from './request'
 import { Article } from '@/entities'
 
-export function loadArticleList(): Promise<Article[]> {
-  // return request({ url: `/api/order-set-list.json`, method: Method.GET })
-  // .then(respData => respData.data)
-  return Promise.resolve([
-    {
-      id: '123',
-      title: 'http协议',
-      summary: 'http协议 RFC1234',
-      updateTime: 0,
-    }, {
-      id: '',
-      title: '',
-      summary: '',
-      updateTime: 0,
-    } as any,
-  ])
+export function loadArticleList(offset: number = 0, limit: number = 50): Promise<Article[]> {
+  return request({
+    url: '/api/articles.json',
+    method: Method.GET,
+    data: { offset, limit }
+  })
+  .then(respData => respData.data)
 }
 
 export function loadArticle(articleId: string) {

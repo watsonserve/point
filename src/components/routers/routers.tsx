@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import Picture from '@/components/picture'
-import logo from '@/assets/images/logo.svg'
+import Logo from '@/assets/images/logo.svg'
 
 const ErrorView = React.lazy(() => import('@/pages/errors'))
 const Home = React.lazy(() => import('@/pages/home'))
@@ -14,7 +13,7 @@ export default class Routers extends Component<any, any> {
       <>
         <header className="public-header">
           <Link className="logo" to="/">
-            <Picture title="logo" src={logo as any} />
+            <Logo />
           </Link>
         </header>
         <BrowserRouter>

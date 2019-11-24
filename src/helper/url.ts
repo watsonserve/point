@@ -80,3 +80,25 @@ export function parseURL(url: string): URLObj {
     username,
   }
 }
+
+export class URI {
+  static encode(that: any): string {
+    return Object.keys(that).reduce((pre: string[], key: string) => {
+      let val = that[key];
+      if (undefined === val || '' === val) {
+        return pre;
+      }
+
+      key = encodeURIComponent(key);
+
+      if (Array.isArray(val)) {
+        pre = pre.concat(val.map(item => `${key}=${encodeURIComponent(item)}`))
+      } else {
+        val = encodeURIComponent(val);
+        pre.push(`${key}=${val}`);
+      }
+
+      return pre;
+    }, []).join('&');
+  }
+}

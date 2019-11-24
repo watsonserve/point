@@ -1,3 +1,4 @@
+import { URI } from '@/helper/url'
 /**
  * 一切request从这里开始
  */
@@ -29,6 +30,32 @@ export interface RequestOptions {
   timeout?: number
 }
 
+function genGETParams(url: string, data?: any): string {
+  return `${url}?${URI.encode(data)}`
+}
+
+function genBodyParams(headers: any, data?: any): string {
+  // 有数据则设置数据类型，没有则设置内容长度为0
+  if (!data) {
+    headers['Content-Length'] = '0'
+    return ''
+  }
+
+  const contentType = headers['Content-Type'] || ContentType.JSON
+  headers['Content-Type'] = `${contentType}; charset=utf-8`
+
+  switch (contentType) {
+    case ContentType.JSON:
+      return JSON.stringify(data)
+    case ContentType.URLENCODE:
+      return URI.encode(data)
+    default:
+      break
+  }
+
+  return data
+}
+
 export default function(options: RequestOptions): Promise<any> {
   options = {
     method: Method.POST,
@@ -36,40 +63,33 @@ export default function(options: RequestOptions): Promise<any> {
     headers: {},
     ...options
   } as RequestOptions
-  const { url, method, timeout } = options
-  let { headers, data } = options
+  const { method, timeout } = options
+  let { url, headers, data } = options
 
-  // 有数据则设置数据类型，没有则设置内容长度为0
-  if (data) {
-    const contentType = headers['Content-Type'] || ContentType.PROTOBUF
-
-    switch (contentType) {
-      case ContentType.JSON:
-        data = JSON.stringify(data)
-      case ContentType.URLENCODE:
-        data = encodeURIComponent(data)
-      default:
-        break
-    }
-
-    headers = {
-      ...headers,
-      'Content-Type': `${contentType}; charset=utf-8`
-    }
-  } else {
-    headers['Content-Length'] = '0'
+  switch (method) {
+    case Method.GET:
+      url = genGETParams(url, data)
+      break
+    case Method.PUT:
+    case Method.POST:
+      data = genBodyParams(headers, data)
+    default:
+      break
   }
 
   return new Promise((resolve, reject) => {
     // 强制超时reject
     const timeHandle = timeout ? setTimeout(() => reject(new Error('timeout')), timeout) : null
-    fetch(url, {
+    const rep: any = {
       method,
       headers,
       cache: 'no-cache',
-      credentials: 'include',
-      body: data
-    })
+      credentials: 'include'
+    }
+    if (Method.GET !== method && data) {
+      rep.body = data;
+    }
+    fetch(url, rep)
     .then(resp => {
       clearTimeout(timeHandle)
       if (!resp.ok) {

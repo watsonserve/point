@@ -1,9 +1,8 @@
 import React from 'react'
 import './nav.styl'
 
-type NavProps = {
+interface NavProps {
   className?: string
-  router: any
 }
 
 export default class Nav extends React.Component<NavProps> {

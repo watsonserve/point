@@ -15,6 +15,10 @@ function mapDispatch(dispatch: FuncDispatch) {
       loadArticle(articleId).then(md => {
         dispatch({ type: 'CUR_ARTICLE', payload: md })
       })
+      .catch(err => {
+        console.error(err)
+        dispatch({ type: 'CUR_ARTICLE', payload: null })
+      })
     }
   }
 }

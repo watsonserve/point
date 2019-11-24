@@ -1,16 +1,3 @@
-export class URI {
-  static encode(that: any) {
-    return Object.keys(that).reduce((pre: string[], key: string) => {
-      let val = that[key];
-      if (undefined !== val && '' !== val) {
-        key = encodeURIComponent(key);
-        val = encodeURIComponent(val);
-        pre.push(`${key}=${val}`);
-      }
-      return pre;
-    }, []).join('&');
-  }
-}
 
 export function encodeBase64(raw: string): Promise<string> {
   return new Promise<string>((resolve, reject) => {

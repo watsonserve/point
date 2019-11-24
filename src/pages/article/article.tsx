@@ -1,4 +1,5 @@
 import React from 'react'
+import _get from 'lodash/get'
 import { boundMethod } from 'autobind-decorator'
 // 组件
 import Nav from '@/components/nav'
@@ -16,7 +17,8 @@ export default class Article extends React.Component<ArticleProps, any> {
   constructor(props: ArticleProps) {
     super(props)
     const loadArticle = this.props.loadArticle
-    loadArticle && loadArticle('')
+    const articleId = _get(this.props, 'match.params.articleId')
+    articleId && loadArticle(articleId)
   }
 
   render() {
