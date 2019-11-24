@@ -9,11 +9,11 @@ interface HomeProps {
   loadArticleList: () => void
 }
 
-export default class Home extends React.Component<HomeProps, any> {
+export default class Home extends React.Component<HomeProps> {
   constructor(props: HomeProps) {
     super(props)
-    const loadOrderSetList = this.props.loadArticleList
-    loadOrderSetList && loadOrderSetList()
+    const loadArticleList = this.props.loadArticleList
+    loadArticleList()
   }
 
   render() {

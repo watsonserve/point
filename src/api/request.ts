@@ -68,7 +68,9 @@ export default function(options: RequestOptions): Promise<any> {
 
   switch (method) {
     case Method.GET:
-      url = genGETParams(url, data)
+      if (data) {
+        url = genGETParams(url, data)
+      }
       break
     case Method.PUT:
     case Method.POST:

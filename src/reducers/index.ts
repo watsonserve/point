@@ -7,7 +7,7 @@ function articleList(state: any, action: Action) {
   if ('ARTICLE_LIST' !== action.type) {
     return state || []
   }
-  return action.payload
+  return action.payload.list
 }
 
 function curArticle(state: any, action: Action) {

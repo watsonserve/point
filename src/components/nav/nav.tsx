@@ -3,6 +3,7 @@ import './nav.styl'
 
 interface NavProps {
   className?: string
+  children?: any
 }
 
 export default class Nav extends React.Component<NavProps> {

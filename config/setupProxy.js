@@ -3,7 +3,7 @@ const proxy = require('http-proxy-middleware')
 module.exports = function(app) {
   app.use(
     proxy('/api/**', {
-      target: 'https://shopping.watsonserve.com/', //跨域地址
+      target: 'https://wiki.watsonserve.com/', //跨域地址
       secure: false,
       changeOrigin: true,
       onProxyRes: (proxyRes, req, res) => {

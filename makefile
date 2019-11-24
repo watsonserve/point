@@ -7,7 +7,7 @@ wiki-fe: /tmp/wiki-fe.tar.gz
 
 /tmp/wiki-fe.tar.gz: src
 	yarn run build
-	tar -czf $@ -C dist .
+	tar -czf $@ -C build .
 
 clean:
 	rm -rf /tmp/wiki-fe.tar.gz

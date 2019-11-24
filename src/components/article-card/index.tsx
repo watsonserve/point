@@ -10,7 +10,7 @@ interface ArticleCardProps {
 
 export default class ArticleCard extends React.Component<ArticleCardProps> {
   render() {
-    const { id, title, summary, updateTime } = this.props.value
+    const { page_id: id, title, summary, update_time: updateTime } = this.props.value as any
 
     return (
       <div className="card attention-card">
