@@ -12,7 +12,8 @@ function mapState(state: any) {
 function mapDispatch(dispatch: FuncDispatch) {
   return {
     loadArticle(articleId: string): void {
-      loadArticle(articleId).then(md => {
+      loadArticle(articleId)
+      .then(md => {
         dispatch({ type: 'CUR_ARTICLE', payload: md })
       })
       .catch(err => {

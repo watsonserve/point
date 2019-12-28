@@ -1,10 +1,6 @@
 import React from 'react'
 import _get from 'lodash/get'
-import { boundMethod } from 'autobind-decorator'
-// 组件
-import Nav from '@/components/nav'
-// 数据类型, 接口
-import t from '@/helper/i18n'
+import { markDown } from '@/utils/markdown'
 // style
 import './article.styl'
 
@@ -22,9 +18,13 @@ export default class Article extends React.Component<ArticleProps, any> {
   }
 
   render() {
+    const md = this.props.value || ''
+
     return (
-      <Nav className="booking">
-      </Nav>
+      <main className="article">
+        <div className="container-wrapper" dangerouslySetInnerHTML = {{ __html: markDown(md) }} />
+        <footer className="public-footer">© 2018 - 2019 watsonserve.com</footer>
+      </main>
     )
   }
 }

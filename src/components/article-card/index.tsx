@@ -10,7 +10,7 @@ interface ArticleCardProps {
 
 export default class ArticleCard extends React.Component<ArticleCardProps> {
   render() {
-    const { page_id: id, title, summary, update_time: updateTime } = this.props.value as any
+    const { articleId: id, title, summary, updateTime } = this.props.value as any
 
     return (
       <div className="card attention-card">
@@ -21,7 +21,7 @@ export default class ArticleCard extends React.Component<ArticleCardProps> {
           </Link>
         </div>
         <p className="update">
-          更新时间 <time>{ dateFormat(updateTime) }</time>
+          更新时间: <time>{ dateFormat(updateTime * 1000) }</time>
         </p>
         <p className="summary">{ summary }</p>
       </div>

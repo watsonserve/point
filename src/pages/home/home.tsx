@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from '@/components/nav'
 import ArticleCard from '@/components/article-card'
 import './home.styl'
 import { Article } from '@/entities'
@@ -20,17 +19,20 @@ export default class Home extends React.Component<HomeProps> {
     const articleList = this.props.value
 
     return (
-      <Nav>
-        <div className="cards">
-          <ul className="list-unstyled list-inline attention">
-          {articleList.map((article: any, idx: number) => (
-            <li className="animated" key={idx}>
-              <ArticleCard value={article} />
-            </li>
-          ))}
-          </ul>
+      <main className="home">
+        <div className="container-wrapper">
+          <div className="cards">
+            <ul className="list-unstyled list-inline attention">
+            {articleList.map((article: any, idx: number) => (
+              <li className="animated" key={idx}>
+                <ArticleCard value={article} />
+              </li>
+            ))}
+            </ul>
+          </div>
         </div>
-      </Nav>
+        <footer className="public-footer">© 2018 - 2019 watsonserve.com</footer>
+      </main>
     )
   }
 }

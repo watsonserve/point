@@ -12,5 +12,4 @@ export function loadArticleList(offset: number = 0, limit: number = 50): Promise
 
 export function loadArticle(articleId: string) {
   return request({ url: `/api/article/${articleId}.md`, method: Method.GET })
-  .then(respData => respData.data)
 }
