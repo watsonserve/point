@@ -2,7 +2,7 @@
 node_modules
 dist
 build
-
+makefile
 logfile
 
 # local env files
