@@ -10,7 +10,7 @@ const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 // const envPublicUrl = process.env.PUBLIC_URL;
-const envPublicUrl = 'https://cb.static-res.store/wiki/';
+const envPublicUrl = 'https://static-res.store/wiki/';
 
 function ensureSlash(inputPath, needsSlash) {
   const hasSlash = inputPath.endsWith('/');

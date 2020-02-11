@@ -18,8 +18,8 @@ export default class Routers extends Component<any, any> {
         </header>
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact component={Home} />
             <Route path="/article/:articleId" component={Article} />
+            <Route path="/" exact component={Home} />
             <Route title="Page Not Found" component={ErrorView} />
           </Switch>
         </BrowserRouter>

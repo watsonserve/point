@@ -6,7 +6,7 @@ export interface Action {
 export type FuncDispatch = (action: Action) => void
 
 export interface Article {
-  id: string
+  articleId: string
   title: string
   summary: string
   updateTime: number

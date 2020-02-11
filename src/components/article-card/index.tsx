@@ -10,12 +10,12 @@ interface ArticleCardProps {
 
 export default class ArticleCard extends React.Component<ArticleCardProps> {
   render() {
-    const { articleId: id, title, summary, updateTime } = this.props.value as any
+    const { articleId, title, summary, updateTime } = this.props.value
 
     return (
       <div className="card attention-card">
         <div className="title">
-          <Link to={`/article/${id}`}>
+          <Link to={`/article/${articleId}`}>
             <i className="icon-font icon-report"></i>
             <h5>{ title }</h5>
           </Link>
