@@ -10,20 +10,20 @@ const Article = React.lazy(() => import('@/pages/article'))
 export default class Routers extends Component<any, any> {
   render() {
     return (
-      <>
-        <header className="public-header">
-          <Link className="logo" to="/">
-            <Logo />
-          </Link>
-        </header>
-        <BrowserRouter>
+      <BrowserRouter>
+        <>
+          <header className="public-header">
+            <Link className="logo" to="/">
+              <Logo />
+            </Link>
+          </header>
           <Switch>
-            <Route path="/article/:articleId" component={Article} />
-            <Route path="/" exact component={Home} />
-            <Route title="Page Not Found" component={ErrorView} />
+            <Route key="article" path="/article/:articleId" component={Article} />
+            <Route key="index" path="/" exact strict component={Home} />
+            <Route key="not_found" title="Page Not Found" component={ErrorView} />
           </Switch>
-        </BrowserRouter>
-      </>
+        </>
+      </BrowserRouter>
     )
   }
 }
