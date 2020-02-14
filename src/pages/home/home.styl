@@ -1,69 +1,66 @@
 @import '~@/assets/style/vars.styl'
 
-main.booking .container
-  dl.order-set
-    margin-bottom 6vw
+main.home
+  height calc(100vh - 64px)
+  overflow auto
 
-    dt.order-set__info, dd.order-set__list
-      padding 0 4vw
+  .container-wrapper
+    min-height calc(100% - 34px)
 
-    dt.order-set__info
-      margin-bottom 2vw
-      font-size 4vw
-      line-height 8vw
-      background #eee
+  .cards
+    position relative
+    margin 0 auto
+    padding 20px 20px 0
 
-    dd.order-set__list ul.ordre-list
-      li.ordre-list__item
-        border-bottom 1px solid $lineColor
-        padding 2vw 0
+    & > ul
+      margin 0 -10px
 
+      &:after
+        content ''
+        display block
+        clear both
 
-.cards
-  position relative
-  margin 0 auto
-  padding 20px 20px 0
+      & > li
+        float left
+        margin-bottom 20px
+        padding 0 10px
+        text-align center
+        animation-name slideInUp
 
-  & > ul
-    margin 0 -10px
-
-    &:after
-      content ''
-      display block
-      clear both
-
-    & > li
-      float left
-      margin-bottom 20px
-      padding 0 10px
-      text-align center
-      animation-name slideInUp
-
-      .card
-        width 80%
-
-    // 大卡片
-    @media screen and (min-width:2410px)
-      &.attention > li
-        width 20%
-
-        .attention-card
-          min-width 100%
-
-    @media screen and (min-width:1940px) and (max-width:2409px)
-      &.attention > li
-        width 25%
-
-        .attention-card
-          min-width 100%
-
-    @media screen and (min-width:1470px) and (max-width:1939px)
-      &.attention > li
-        width 33.333%
-
-        .attention-card
+        .card
+          width 80%
+          min-width 360px
           max-width 480px
 
-    @media screen and (max-width:1469px)
-      &.attention > li
-        width 50%
+      @media screen and (min-width:2320px)
+        &.attention > li
+          width 16.666%
+
+      @media screen and (min-width:1940px) and (max-width:2319px)
+        &.attention > li
+          width 20%
+
+      @media screen and (min-width:1560px) and (max-width:1939px)
+        &.attention > li
+          width 25%
+
+      @media screen and (min-width:1180px) and (max-width:1559px)
+        &.attention > li
+          width 33.333%
+
+      @media screen and (min-width:800px) and (max-width:1179px)
+        &.attention > li
+          width 50%
+
+      @media screen and (min-width:420px) and (max-width:799px)
+        &.attention > li
+          width 100%
+
+      @media screen and (max-width:419px)
+        &.attention > li
+          width 100%
+
+          .card
+            width 100%
+            min-width 334px
+            max-width 360px

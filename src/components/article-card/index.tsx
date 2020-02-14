@@ -16,7 +16,7 @@ export default class ArticleCard extends React.Component<ArticleCardProps> {
       <Link className="card attention-card" to={`/article/${articleId}`}>
         <div className="title">
           <i className="icon-font icon-report"></i>
-          <h5>{ title }</h5>
+          <h4>{ title }</h4>
         </div>
         <p className="update">
           更新时间: <time>{ dateFormat(updateTime * 1000) }</time>

@@ -7,10 +7,11 @@ main.article
   background #fafafa
 
   .container-wrapper
-    margin 20px auto
+    margin 20px auto 72px
     padding 0 20px
     width 1000px
     max-width 100%
+    line-height 1.6
 
     h1, h2, h3, h4, h5, h6
       margin-bottom 12px
@@ -23,10 +24,22 @@ main.article
       padding-left 2em
       list-style disc
 
-    pre
-      padding 8px
-      background #eee
-
     code
+      margin 0 2px
+      border 1px solid #e0e0e0
+      border-radius 3px
+      padding 2px 4px
+      background #f3f3f3
+
+    pre code
+      display inline-block
+      margin 0
+      border 0 none
+      padding 8px 16px
+      min-width 50%
       line-height 2em
-    
+
+    table
+      th, td
+        border 1px solid #999
+        padding 8px 16px

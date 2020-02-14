@@ -6,12 +6,15 @@ a.attention-card
   margin 0 auto
   border-radius 4px
   padding 10px 16px 50px
-  min-width 440px
-  height 168px
+  min-width 360px
+  height 144px
   box-shadow 0 8px 18px 0 rgba(41, 104, 152, .26)
   text-align left
   color #333
   background #fff
+
+  &:focus
+    text-decoration none
 
   .title
     position relative
@@ -22,16 +25,17 @@ a.attention-card
     white-space nowrap
     text-overflow ellipsis
 
-    i, h5
-      font-size 14px
-      line-height 20px
+    i, h4
+      font-size 18px
+      line-height 24px
       vertical-align top
 
     i.icon-font
       color #5b6d95
 
-    h5
+    h4
       display inline-block
+      font-weight 600
 
   &:hover .title .remove a
     display inline
