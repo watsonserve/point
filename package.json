@@ -50,7 +50,7 @@
     "dotenv": "^6.0.0",
     "dotenv-expand": "^4.2.0",
     "fs-extra": "^7.0.0",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "md5": "^2.2.1",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.2",
